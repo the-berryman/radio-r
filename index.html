@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #606060;
+            color: #000000;
+            font-family: "Courier New", monospace;
+            margin: 0;
+            padding: 0;
+            cursor: default;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .side-nav {
+            width: 200px;
+            padding: 40px 20px;
+            background-color: #585858;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .side-nav a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px;
+            transition: all 0.3s ease;
+            text-transform: lowercase;
+        }
+
+        .side-nav a:hover {
+            background-color: #707070;
+            padding-left: 10px;
+            border: 1px solid #000;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 40px;
+        }
+
+        .site-title {
+            font-size: 28px;
+            margin-bottom: 40px;
+            position: relative;
+            letter-spacing: 2px;
+            text-transform: lowercase;
+        }
+
+        .site-title::before,
+        .site-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #000000;
+        }
+
+        .site-title::before {
+            top: -10px;
+        }
+
+        .site-title::after {
+            bottom: -10px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+            padding: 10px;
+        }
+
+        .product-card:hover {
+            background-color: #707070;
+            border: 1px solid #000;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 14px;
+            margin: 5px 0;
+            text-transform: lowercase;
+        }
+
+        .product-card p {
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: #000000;
+            padding: 5px 0;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            cursor: pointer;
+            text-transform: lowercase;
+        }
+
+        button:hover {
+            text-decoration: underline;
+        }
+
+        .marquee {
+            font-size: 12px;
+            margin: 20px 0;
+            opacity: 0.7;
+        }
+
+        .marquee span {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+            text-transform: lowercase;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .status-line {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #585858;
+            padding: 5px 20px;
+            font-size: 12px;
+            text-transform: lowercase;
+        }
+
+        input {
+            background: none;
+            border: none;
+            border-bottom: 1px solid #000000;
+            color: #000000;
+            padding: 5px 0;
+            margin: 5px 0;
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        input:focus {
+            outline: none;
+            border-bottom: 2px solid #000000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="side-nav">
+        <a href="#shop">shop</a>
+        <a href="#blog">blog</a>
+        <a href="#about">about</a>
+        <a href="#login">login</a>
+        <a href="#cart">cart (0)</a>
+    </nav>
+    
+    <div class="main-content">
+        <h1 class="site-title">radio reverb</h1>
+
+        <div class="marquee">
+            <span>vintage electronics & analog dreams - new items added weekly - free shipping on orders over $100</span>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="/api/placeholder/180/180" alt="vintage walkman">
+                <h3>sony walkman (1985)</h3>
+                <p>$129.99</p>
+                <button>add to cart</button>
+            </div>
+            <div class="product-card">
+                <img src="/api/placeholder/180/180" alt="retro game console">
+                <h3>nintendo gameboy</h3>
+                <p>$89.99</p>
+                <button>add to cart</button>
+            </div>
+            <div class="product-card">
+                <img src="/api/placeholder/180/180" alt="vintage radio">
+                <h3>grundig satellite 750</h3>
+                <p>$199.99</p>
+                <button>add to cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="status-line">
+        connected // last updated: 24.10.24 // items in stock: 42
+    </div>
+</body>
+</html>
